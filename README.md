@@ -2,7 +2,7 @@
 ## by Ex10si0n
 This Repository is for collecting codes in learning coding.
 
-## Coding Environment
+## Developing Environment
 ### Python
 This is the Python version I use.
 ```bash
