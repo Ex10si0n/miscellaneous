@@ -12,9 +12,18 @@ $ conda --version
 conda 4.8.2
 ```
 ### C++
-**C++11** is the C++ version I use.
+```bash
+$ g++ --version
+Apple clang version 11.0.3 (clang-1103.0.32.59)
+Target: x86_64-apple-darwin19.4.0
+# Xcode Standard Version
+```
 ### Java
-**Java13** is the Java version I use.
+```bash
+$ java --version
+java 14
+Java(TM) SE Runtime Environment (build 13+36-1461)
+```
 ### Editor
 Editors I usually use are the followings:
 ```bash
