@@ -1,3 +1,4 @@
+import os
 class Gate(object):
 
     def __init__(self, idf):
@@ -10,7 +11,6 @@ class Gate(object):
             for i in range(len(controller.nodes)):
                 if node == controller.nodes[i].idf:
                     self.input_line.append(controller.nodes[i])
-        
 
     def delete(self):
         pass
@@ -169,8 +169,11 @@ class Controller(object):
         say = input()
 
         ''' End situation'''
-        if say == 'exit':
+        if say == 'exit' or say == 'q' or say == 'quit':
             return 0
+        if say == 'help' or say == 'h' or say == 'man':
+            os.system('cat README.md')
+
 
         ''' Preprocess the say string '''
         for i in range(len(say)):
@@ -249,6 +252,8 @@ class Controller(object):
 
 
 controller = Controller()
+print("LOGI Beta (2005), An interactive Logic Gate Simulator\nType 'exit' to\
+ quit, 'help' to open the manual documentation\n")
 while True:
     ret = controller.interact()
     for node in controller.nodes:
