@@ -161,7 +161,7 @@ class Controller(object):
         for i in range(len(say)):
             if say[i] == ',':
                 say = say[:i] + ' ' + say[i+1:]
-        return say
+        return say.split()
 
 
     def interact(self):
@@ -176,12 +176,9 @@ class Controller(object):
 
 
         ''' Preprocess the say string '''
-        for i in range(len(say)):
+        for i in range(len(say)-2):
             if say[i] == ',' and say[i+1] == ' ':
-                isay = ""
-                for j in range(0, len(say)):
-                    if j != i+1:
-                        isay = isay + say[j]
+                say = say[:i+1]+say[i+2:]
 
         self.instr += 1
         say = say.split()
