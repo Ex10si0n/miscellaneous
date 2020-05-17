@@ -24,15 +24,17 @@ $ java --version
 java 14
 Java(TM) SE Runtime Environment (build 13+36-1461)
 ```
-### Editor
+### Editor or IDE
 Editors I usually use are the followings:
 ```bash
 - VIM 8.2 macOS Version
   └ Space-Vim + Terminal.app
 - Sublime Text 3.app
 - Visual Studio Code.app
+- Intellij IDEA.app
 ```
 ## Status Notes
 1. 🎉 Repository created
 2. 💻 Learning to use VIM
 3. 📦 Learning to use Git
+4. 🔨 Java/Python Object Oriented Programming
