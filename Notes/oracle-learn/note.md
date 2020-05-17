@@ -336,6 +336,11 @@ SQL> SELECT s_id,sum(grade) AS sum_grade FROM sc GROUP BY s_id HAVING sum(grade)
 **嵌套查询**
 ```sql
 SQL> SELECT s_id, s_age FROM student WHERE s_id IN(SELECT s_id FROM ssc WHERE c_id=1);
+
+SQL> SELECT id, name, people_num
+     FROM employee, department
+     WHERE employee.in_dpt = department.dpt_name
+     ORDER BY id;
 ```
 **表的连接**
 ```sql
@@ -374,4 +379,224 @@ SQL> select * from all_info where grade>80;
 --删除视图
 SQL> DROP VIEW all_info;
 ```
+
+## PL/SQL
+### PL/SQL结构
+```plsql
+DECLARE      --声明部分。例如定义常量，变量，引用的函数或过程等。
+BEGIN        --执行部分。包含变量赋值，过程控制等。
+EXCEPTION    --处理异常。包含错误处理语句。
+END;         --结束部分。
+/            /*添加这个斜杠来执行 PL/SQL 语句块。*/
+```
+
+### Hello World
+```plsql
+SET SERVEROUTPUT ON;
+BEGIN
+    DBMS_OUTPUT.put_line('Hello World');
+END;
+/
+```
+
+### 变量声明
+全局变量可以在内部语句块中访问，内部变量在语句块外面访问不到.
+```plsql
+DECLARE
+    v_tell varchar2(20);
+BEGIN
+    v_name := 'Hello World';
+    DBMS_OUTPUT.put_line('System Output: ' || v_tell);
+END;
+/
+```
+
+### 常量声明
+```plsql
+DECLARE
+    v_num CONSTANT NUMBER := 1;
+    v_bool CONSTANT BOOLEAN := FALSE;
+BEGIN
+    NULL;
+END;
+/
+```
+
+### 键盘输入
+```plsql
+DECLARE
+    v_sid student.s_id%TYPE;
+    v_sname student.s_name%TYPE;
+BEGIN
+    v_sid := &studentid;
+    SELECT s_name INTO v_name FROM student WHERE s_id = v_sid;
+    DBMS_OUTPUT.put_line('Student''s name is : ' || v_sname);
+END;
+/
+```
+
+### 运算符
+赋值运算符 :=
+连接运算符 ||
+
+| 分类           | 运算符                        | 说明                                                         |
+| -------------- | ----------------------------- | ------------------------------------------------------------ |
+| 简单关系运算符 | >， <， >= ，<=， =， !=， <> | 大于，小于，大于等于，小于等于，等于。`!=` 和 `<>` 都表示不等于。 |
+| 判断空值       | `IS NULL` ，`IS NOT NULL`     | 判断某列内容是否是 NULL                                      |
+| 范围查询       | `BETWEEN` 最小值 `AND` 最大值 | 在指定的最小值和最大值的范围内查找                           |
+| 范围查询       | `IN`                          | 指定查询的范围                                               |
+| 模糊查询       | `LIKE`                        | 模糊查询                                                     |
+
+```plsql
+DECLARE
+  v_a NUMBER :=1;
+  v_b NUMBER :=2;
+  v_c NUMBER;
+  v_d VARCHAR2(20);
+BEGIN
+  IF v_a<v_b THEN     --判断 v_a 是否小于 v_b
+    DBMS_OUTPUT.put_line(v_a || ' < ' || v_b);
+  END IF;
+  IF v_c IS NULL THEN   --判断 v_c 是否为空
+    DBMS_OUTPUT.put_line('v_c is null');
+  END IF;
+  IF v_b BETWEEN 1 AND 3 THEN    --判断 v_b 是否在 1 到 3 之间
+    DBMS_OUTPUT.put_line('v_b is between 1 and 3');
+  END IF;
+  IF v_b IN(1,2,3) THEN      --判断 v_b 是否在 （1，2，3）里
+    DBMS_OUTPUT.put_line('v_b is : ' || v_b);
+  END IF;
+  IF v_d LIKE 'shi%' THEN     --判断 v_d 是否是 shi 开头
+    DBMS_OUTPUT.put_line(v_d);
+  END IF;
+END;
+/
+```
+输出
+```plsql
+1 < 2
+v_c is null
+v_b is between 1 and 3
+v_b is : 2
+```
+
+### 数据类型
+标量类型（scala data type）：用来保存单个值。例如：数字，字符串，布尔值，日期等。
+    - NUMBER
+    - BINARY_INTEGER, PLS_INTEGERBINARY
+    - BINARY_DOUBLE, BINARY_FLOAT
+    - **CHAR, VARCHAR2**
+        - CHAR 以定长方式保存字符串。若赋值长度不足其定义长度，会以空格补充。
+        - VARCHAR2 变长字符串。若不足定义长度，不会补充内容。
+    - NCHAR, NVARCHAR2
+    - **LONG, LONG RAW**
+        - LONG 保存变长字符串。
+        - LONG RAW 保存变长二进制数据。
+    - ROWID, UROWID
+    - DATE
+        - 获取系统时间 `sys_date DATE := SYSDATE/SYSTIMESTAMP;`
+
+复合类型（coposite data type）：保存多种类型数值。例如：索引表，可变数组，嵌套表等。
+引用类型（reference data type）：用来指向另一个不同的对象。
+LOB 类型：大数据类型，主要用来处理二进制数据，最多可以存储 4G 的信息。
+
+```plsql
+DECLARE
+    p1 PLS_INTEGER := 2147483647;
+    p2 PLS_INTEGER := 1;
+    n NUMBER;
+BEGIN
+    n:= p1 + p2;
+END;
+/
+
+--ERROR: 数字溢出
+```
+```plsql
+DECLARE
+  v_timezone TIMESTAMP WITH TIME ZONE := SYSTIMESTAMP;
+  v_localtime TIMESTAMP WITH LOCAL TIME ZONE := SYSTIMESTAMP;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(v_timezone);
+  DBMS_OUTPUT.PUT_LINE(v_localtime);
+END;
+/
+```
+
+### 流程控制语句
+IF ... THEN ... ELSIF ... ELSE ...
+```plsql
+DECLARE
+  v_name student.s_name%TYPE;
+  v_sex student.s_sex%TYPE;
+BEGIN
+  SELECT s_name,s_sex INTO v_name,v_sex FROM student WHERE s_id=1003;
+  CASE v_sex
+    WHEN 'man' THEN
+      DBMS_OUTPUT.put_line(v_name|| ' is man');
+    WHEN 'woman' THEN
+      DBMS_OUTPUT.put_line(v_name ||'is woman');
+    ELSE
+      DBMS_OUTPUT.put_line('dont know');
+    END CASE;
+END;
+/
+```
+WHILE ... LOOP
+    ...;
+END LOOP;
+```plsql
+DECLARE
+    v_i NUMBER := 1;
+BEGIN
+    WHILE(v_i <= 5) LOOP
+        DBMS_OUTPUT.put_line(v_i);
+        v_i := v_i+1;
+    END LOOP;
+END;
+/
+```
+FOR ... IN 1 .. N Loop
+    ...;
+END LOOP;
+```plsql
+DECLARE
+    v_i NUMBER := 1;
+BEGIN
+    FOR v_i IN 1 .. 5 LOOP
+        DBMS_OUTPUT.put_line(v_i);
+    END LOOP;
+END;
+/
+```
+`exit;    # break`
+
+`CONTINUE;`
+
+`GOTO flag;
+<<falg>>`
+
+异常
+```plsql
+EXCEPTION
+EXCEPTION
+  WHEN '异常类型' | '用户自定义异常' | '异常代码' | OTHERS THEN
+    '异常处理语句';
+```
+捕获异常
+```plsql
+DECLARE
+  v_a NUMBER := 1;
+  v_b NUMBER := 0;
+BEGIN
+  v_a := v_a/v_b;
+EXCEPTION
+  WHEN ZERO_DIVIDE THEN   --捕获除数为 0 的异常
+    DBMS_OUTPUT.put_line('zero divide');
+    DBMS_OUTPUT.put_line(SQLCODE);  --输出异常编号
+    DBMS_OUTPUT.put_line(SQLERRM);  --输出异常详情
+END;
+/
+```
+
 
