@@ -15,7 +15,7 @@ def displayComponents(cash):
 
 def main():
     cash = 1000
-    eachSlotPrice = 500
+    eachSlotPrice = 250
     clear()
     displayComponents(cash)
     print('----------------------')

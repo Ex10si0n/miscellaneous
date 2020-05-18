@@ -23,7 +23,7 @@ class graph(object):
         if t not in f.n:
             f.n.append(t)
             f.ev.append(value)
-            self.e += 1  
+            self.e += 1
         else:
             for i in range(len(f.n)):
                 if f.n[i] == t:
@@ -53,4 +53,3 @@ if __name__ == "__main__":
     for i in range(20):
         print(c.v)
         c = c.n[0]
-        

@@ -201,7 +201,6 @@ class Controller(object):
                 self.nodes[len(self.nodes)-1].set(False)
             else:
                 self.callError("Boolean Value Error")
-
         else:
             ins = self.getInputs(val)
 
