@@ -38,3 +38,4 @@ Editors I usually use are the followings:
 2. 💻 Learning to use VIM
 3. 📦 Learning to use Git
 4. 🔨 Java/Python Object Oriented Programming
+5. 🗂 Learning to use mySQL
