@@ -32,8 +32,8 @@ public class Access {
                 if(code.equals("admin")) {
                     System.out.println("管理员权限已更新");
                     s.execute("UPDATE ACCOUNT SET AUTHORITY = 'Admin' WHERE USRNAME='"+name+"';");
-                } else {
-                    System.out.println("密码错误");
+                } else {                    System.out.println("密码错误")
+;
                 }
             }
             if (instr.equals("showallusrs")) {
@@ -124,6 +124,9 @@ public class Access {
                 if (instr.equals("exit") || instr.equals("quit")) {
                     break;
                 }
+                if (instr.equals("h") || instr.equals("help")) {
+                    help();
+                }
             }
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -144,5 +147,9 @@ public class Access {
                 }
             }
         }
+    }
+
+    private static void help() {
+        System.out.println("== When in the instruction interface ==\n    signup: for Sign Up an account\n    login: for Log In your account\n== When Signed In ==\n    showinfo: Show your account's info\n    showallusrs: Show all users' info\n    root: get Admin Authority password is 'admin'");
     }
 }

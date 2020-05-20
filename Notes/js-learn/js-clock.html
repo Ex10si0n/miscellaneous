@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+	function displayTime() {
+		document.getElementById("time").innerHTML = new Date().toTimeString();
+	}
+
+	setInterval(displayTime, 1000);
+</script>
+<head>
+	<meta charset="UTF-8">
+	<title>Time</title>
+	<style>
+		.bodyBorder {
+			background-color: black;
+		}
+		.clockType {
+			font-family: "Helvetica";
+			font-weight: bold;
+			font-size: 170px;
+			margin-left: 50px;
+			margin-right: 50px;
+			margin-top: 200px;
+			margin-bottom: 283px;
+			color: tomato;
+		}
+	</style>
+</head>
+<body  style="margin:0px; border: 10px solid tomato">
+	<p id="time" class="clockType"></p>	
+</body>
+</html>
