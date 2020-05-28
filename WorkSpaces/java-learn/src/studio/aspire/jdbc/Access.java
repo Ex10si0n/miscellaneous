@@ -32,8 +32,9 @@ public class Access {
                 if(code.equals("admin")) {
                     System.out.println("管理员权限已更新");
                     s.execute("UPDATE ACCOUNT SET AUTHORITY = 'Admin' WHERE USRNAME='"+name+"';");
-                } else {                    System.out.println("密码错误")
-;
+                } else {
+                    System.out.println("密码错误");
+
                 }
             }
             if (instr.equals("showallusrs")) {
