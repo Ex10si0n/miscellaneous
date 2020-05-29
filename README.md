@@ -33,9 +33,12 @@ Editors I usually use are the followings:
 - Visual Studio Code.app
 - Intellij IDEA.app
 ```
-## Status Notes
+## Learning Progress Notes
 1. 🎉 Repository created
-2. 💻 Learning to use VIM
-3. 📦 Learning to use Git
+2. 💻 VIM
+3. 📦 Git
 4. 🔨 Java/Python Object Oriented Programming
-5. 🗂 Learning to use mySQL
+5. 🗂 Databases: mySQL/oracle
+6. 💾 JDBC
+7. 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
+
