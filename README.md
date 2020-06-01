@@ -33,12 +33,21 @@ Editors I usually use are the followings:
 - Visual Studio Code.app
 - Intellij IDEA.app
 ```
-## Learning Progress Notes
+## Technique Stack
+```python3
+# 1 .. 5 mark for technique ability level
+tech = ['C/C++': 2, 'HTML/CSS': 3, 'Java': 2, 'Python3': 3, 'Linux': 2,\
+        'Architecture': 2, 'Data Structure': 2, 'Algorithm': 4, 'ML/Tensor-flow': 1]
+```
+### Learning Progress Notes
 1. 🎉 Repository created
-2. 💻 VIM
+2. 💻 VIM - SpaceVim
 3. 📦 Git
 4. 🔨 Java/Python Object Oriented Programming
 5. 🗂 Databases: mySQL/oracle
 6. 💾 JDBC
 7. 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
 
+## Plan to
+1. 📌Swift
+2. 📱iOS Development
