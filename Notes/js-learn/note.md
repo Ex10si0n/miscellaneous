@@ -373,3 +373,19 @@ clearInterval(timerId);
 | onunload    | 关闭网页时                           |
 | onsubmit    | 表单提交事件                         |
 
+## Function 对象
+
+### arguments 对象
+```JavaScript
+function add() {
+    var sum = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+document.write(add() + "<br>");
+document.write(add(1) + "<br>");
+document.write(add(1, 2) + "<br>");
+document.write(add(1, 2, 3) + "<br>");
+```
