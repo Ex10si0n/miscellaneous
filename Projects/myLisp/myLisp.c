@@ -30,8 +30,6 @@ int main(int argc, char** argv) {
     while (1) {
         char* input = readline("lisp> ");
         add_history(input);
-        printf("No you're a %s\n", input);
-
         free(input);
     }
 
