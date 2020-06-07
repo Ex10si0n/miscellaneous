@@ -30,6 +30,6 @@ def main():
         # service for client
         returnData(new_socket)
     tcp_server_socket.close()
-    
+
 if __name__ == '__main__':
     main()

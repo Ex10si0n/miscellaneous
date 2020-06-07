@@ -47,6 +47,7 @@ tech = ['C/C++': 2, 'HTML/CSS': 3, 'Java': 2, 'Python3': 3, 'Linux': 2,\
 5. 🗂 Databases: mySQL/oracle
 6. 💾 JDBC
 7. 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
+8. 📥 Data Science Decision Tree
 
 ## Plan to
 1. 📌Swift
