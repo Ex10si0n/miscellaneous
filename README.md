@@ -34,11 +34,36 @@ Editors I usually use are the followings:
 - Intellij IDEA.app
 ```
 ## Technique Stack
-```python3
-# 1 .. 5 mark for technique ability level
-tech = ['C/C++': 2, 'HTML/CSS': 3, 'Java': 2, 'Python3': 3, 'Linux': 2,\
-        'Architecture': 2, 'Data Structure': 2, 'Algorithm': 4, 'ML/Tensor-flow': 1]
-```
+> * Programming Language Basic
+  * C, C++, Python, Java, C#
+     
+     * Objective Oriented Programming
+       * Java, Python
+     
+     * Algorithms and Data Structure
+       * DFS, BFS, Dijkstra, Floyd, SPFA, A*, Heap-sort, Quick-sort, Merge-sort
+       * BST, AVL, SegTree, Heap, Treap
+     
+     * WebPage Programming
+       * HTML, CSS, JS
+     
+     * Development Tools Mastering
+       * Linux, Unix, Windows
+       * vim, git, tmux
+       * IDEA, Jupyter Notebook, Xcode, EclipseEE, VSCode
+     
+     * Databases
+       * mySQL, Oracle
+     * Data Science and Analysis
+       * pandas, numpy, matplotlib
+       * PIL
+       * beautifulsoup4, requests
+       * tensorflow, sklearn
+     * Computer Architecture
+       * Simple 8-bit CPU Design
+     * Server
+       * socket, udp, tcp
+       * HTTP socket server
 ### Learning Progress Notes
 1. 🎉 Repository created
 2. 💻 VIM - SpaceVim
@@ -47,8 +72,9 @@ tech = ['C/C++': 2, 'HTML/CSS': 3, 'Java': 2, 'Python3': 3, 'Linux': 2,\
 5. 🗂 Databases: mySQL/oracle
 6. 💾 JDBC
 7. 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
-8. 📥 Data Science Decision Tree
+8. 📦 Python Modulue Numpy/Matplotlib/Pandas
+9. 📥 Data Science: Decision Tree/Kmeans Algorithm
 
 ## Plan to
-1. 📌Swift
-2. 📱iOS Development
+1. 📌 Swift
+2. 📱 iOS Development
