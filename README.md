@@ -36,7 +36,7 @@ Editors I usually use are the followings:
 ## Technique Stack
 > * Programming Language Basic
   * C, C++, Python, Java, C#
-     
+
      * Objective Oriented Programming
        * Java, Python
      
@@ -54,26 +54,32 @@ Editors I usually use are the followings:
      
      * Databases
        * mySQL, Oracle
+    
      * Data Science and Analysis
        * pandas, numpy, matplotlib
        * PIL
        * beautifulsoup4, requests
-       * tensorflow, sklearn
+       * Machine Learning
+       		* SVM, Decision Tree, Random Forest, K-means
+    
      * Computer Architecture
        * Simple 8-bit CPU Design
+    
      * Server
        * socket, udp, tcp
        * HTTP socket server
 ### Learning Progress Notes
 1. 🎉 Repository created
-2. 💻 VIM - SpaceVim
-3. 📦 Git
+2. 💻 vim   - SpaceVim
+3. 📦 git
 4. 🔨 Java/Python Object Oriented Programming
 5. 🗂 Databases: mySQL/oracle
 6. 💾 JDBC
 7. 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
 8. 📦 Python Modulue Numpy/Matplotlib/Pandas
-9. 📥 Data Science: Decision Tree/Kmeans Algorithm
+9. 📥 Data Science ML: Decision Tree/Kmeans Algorithm
+10. 🌏 Scraping: requests, beautiful soup 4
+11. 💾 mySQL python connector
 
 ## Plan to
 1. 📌 Swift
