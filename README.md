@@ -34,9 +34,9 @@ Editors I usually use are the followings:
 - Intellij IDEA.app
 ```
 ## Technique Stack
-> * Programming Language Basic
-  * C, C++, Python, Java, C#
-
+     * Programming Language Basic
+       * C, C++, Python, Java, C#
+       
      * Objective Oriented Programming
        * Java, Python
      
