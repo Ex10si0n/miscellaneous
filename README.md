@@ -77,9 +77,11 @@ Editors I usually use are the followings:
 6. 💾 JDBC
 7. 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
 8. 📦 Python Modulue Numpy/Matplotlib/Pandas
-9. 📥 Data Science ML: Decision Tree/Kmeans Algorithm
+9. 📥 Data Science ML: Decision Tree/Random Forest/Kmeans Algorithm
 10. 🌏 Scraping: requests, beautiful soup 4
 11. 💾 mySQL python connector
+12. 📄 Data Washing Methods, data processing
+13. 🏷 Clustering/PCA Dimension Reduction
 
 ## Plan to
 1. 📌 Swift
