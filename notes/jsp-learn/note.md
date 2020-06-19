@@ -1,16 +1,19 @@
 # JSP-Learn
+
 ## `server: Apache Tomcat`
+
 **Installation & StartUp:**
 
 ```bash
 brew install tomcat
 brew services start tomcat
 ```
-**HTTP Webapps root Directory**
-`/usr/local/Cellar/tomcat/9.0.35/libexec/webapps/ROOT`
+
+**HTTP Webapps root Directory** `/usr/local/Cellar/tomcat/9.0.35/libexec/webapps/ROOT`
 
 ## Codes
-```jsp
+
+```text
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8" import="java.util.*"%>
 <!DOCTYPE html>
@@ -38,3 +41,4 @@ brew services start tomcat
     </body>
 </html>
 ```
+
