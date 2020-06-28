@@ -2,7 +2,7 @@
 
 ## by Ex10si0n
 
-This Repository is for collecting codes in learning coding.
+This Repository is for collecting codes in my learning coding.
 
 ## Developing Environment
 
