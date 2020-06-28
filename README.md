@@ -94,5 +94,4 @@ Editors I usually use are the followings:
 ## Plan to
 
 1. 📌 Swift
-2. 📱 iOS Development
 
