@@ -16,7 +16,7 @@ public class Access {
             if (instr.equals("showinfo")) {
                 String sql = "SELECT * FROM ACCOUNT WHERE USRNAME='"+name+"' AND PASSWORD='"+pw+"';";
                 ResultSet rs = s.executeQuery(sql);
-                while(rs.next()) {
+          w      while(rs.next()) {
                     int id = rs.getInt("id");
                     String usrName = rs.getString(2);
                     String passWord = rs.getString(3);
