@@ -262,7 +262,7 @@ int main(int argc, char const *argv[]){
 	cout<<"杀手:"<<p[killer].name<<" ";
 	cout<<"无间:"<<p[spector].name<<" ";
 	cout<<endl;
-	
+
 	cout<<"角色   第一天   第二天   第三天   第四天   第五天   第六天   第七天\n";
 	for(int i=1;i<=5;i++){
 		if(i==1) cout<<"警察:  ";
