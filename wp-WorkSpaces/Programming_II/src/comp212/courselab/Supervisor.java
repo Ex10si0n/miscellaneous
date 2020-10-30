@@ -1,4 +1,4 @@
-package comp212.oop;
+package comp212.courselab;
 
 import java.util.ArrayList;
 import java.util.List;

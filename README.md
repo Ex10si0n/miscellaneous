@@ -69,6 +69,7 @@ Editors I usually use are the followings:
   * beautifulsoup4, requests
   * Machine Learning
     * SVM, Decision Tree, Random Forest, K-means
+  * Tensorflow.keras
 * Computer Architecture
   * Simple 8-bit CPU Design
 * Server
@@ -77,21 +78,22 @@ Editors I usually use are the followings:
 
     **Learning Progress Notes**
 
-  * 🎉 Repository created
-  * 💻 vim   - SpaceVim
-  * 📦 git
-  * 🔨 Java/Python Object Oriented Programming
-  * 🗂 Databases: mySQL/oracle
-  * 💾 JDBC
-  * 🛠 J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
-  * 📦 Python Modulue Numpy/Matplotlib/Pandas
-  * 📥 Data Science ML: Decision Tree/Random Forest/Kmeans Algorithm
-  * 🌏 Scraping: requests, beautiful soup 4
-  * 💾 mySQL python connector
-  * 📄 Data Washing Methods, data processing
-  * 🏷 Clustering/PCA Dimension Reduction
+  * Repository created
+  * vim   - SpaceVim
+  * git
+  * Java/Python Object Oriented Programming
+  * Databases: mySQL/oracle
+  * JDBC
+  * J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
+  * Python Modulue Numpy/Matplotlib/Pandas
+  * Data Science ML: Decision Tree/Random Forest/Kmeans Algorithm
+  * Scraping: requests, beautiful soup 4
+  * mySQL python connector
+  * Data Washing Methods, data processing
+  * Clustering/PCA Dimension Reduction
+  * Machine Learning: Neural Networks, CNN, RNN (Intro)
+  * Machine Learning: Implementing CNN, RNN, NN
 
 ## Plan to
 
-1. 📌 Swift
 

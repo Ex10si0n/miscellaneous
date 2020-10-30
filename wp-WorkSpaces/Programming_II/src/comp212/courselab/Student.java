@@ -1,4 +1,4 @@
-package comp212.oop;
+package comp212.courselab;
 
 public class Student {
     String name;
