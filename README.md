@@ -59,7 +59,7 @@ Editors I usually use are the followings:
   * HTML, CSS, JS
 * Development Tools Mastering
   * Linux, Unix, Windows
-  * vim, git, tmux
+  * vim, neovim, git, tmux
   * IDEA, Jupyter Notebook, Xcode, EclipseEE, VSCode
 * DBMS
   * mySQL, Oracle
@@ -76,7 +76,7 @@ Editors I usually use are the followings:
   * socket, udp, tcp
   * HTTP socket server
 
-    **Learning Progress Notes**
+## Learning Progress Notes
 
   * Repository created
   * vim   - SpaceVim
