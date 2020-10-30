@@ -49,7 +49,7 @@ Editors I usually use are the followings:
 ## Technique Stack
 
 * Programming Language Basic
-  * C, C++, Python, Java, C\#
+  * C, C++, Python, Java, C\#, JavaScript
 * Objective Oriented Programming
   * Java, Python
 * Algorithms and Data Structure
@@ -61,7 +61,7 @@ Editors I usually use are the followings:
   * Linux, Unix, Windows
   * vim, git, tmux
   * IDEA, Jupyter Notebook, Xcode, EclipseEE, VSCode
-* Databases
+* DBMS
   * mySQL, Oracle
 * Data Science and Analysis
   * pandas, numpy, matplotlib
@@ -69,7 +69,7 @@ Editors I usually use are the followings:
   * beautifulsoup4, requests
   * Machine Learning
     * SVM, Decision Tree, Random Forest, K-means
-  * Tensorflow.keras
+    * Tensorflow.keras
 * Computer Architecture
   * Simple 8-bit CPU Design
 * Server
@@ -85,15 +85,19 @@ Editors I usually use are the followings:
   * Databases: mySQL/oracle
   * JDBC
   * J2EE: Webapps@struts2-framework/servlet/jsp/tomcat-server
+  * Sockets
   * Python Modulue Numpy/Matplotlib/Pandas
   * Data Science ML: Decision Tree/Random Forest/Kmeans Algorithm
   * Scraping: requests, beautiful soup 4
   * mySQL python connector
   * Data Washing Methods, data processing
   * Clustering/PCA Dimension Reduction
+  * Threading, Mutual Exclusive, Peterson Algorithms
   * Machine Learning: Neural Networks, CNN, RNN (Intro)
-  * Machine Learning: Implementing CNN, RNN, NN
+  * Machine Learning: CNN, RNN, NN (Implement)
 
 ## Plan to
 
-
+  * Docker
+  * Vue.js
+  * PHP
