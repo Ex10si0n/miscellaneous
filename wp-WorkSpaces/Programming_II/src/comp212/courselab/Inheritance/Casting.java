@@ -1,4 +1,4 @@
-package comp212.courselab;
+package comp212.courselab.Inheritance;
 
 public class Casting {
     public static void main(String[] args) {

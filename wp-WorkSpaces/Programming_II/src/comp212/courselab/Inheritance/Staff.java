@@ -1,10 +1,11 @@
-package comp212.courselab;
+package comp212.courselab.Inheritance;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Staff {
     public static List<Staff> allStaff = new ArrayList<>();
+    public static int staffNumber;
     private String sid;
     private String name;
     private int salary;
@@ -13,17 +14,21 @@ public class Staff {
         this.sid = "test-id";
         this.name = "John Doe";
         this.salary = 10000;
+        staffNumber ++;
+        allStaff.add(this);
     }
     public Staff(String sid, String name, int salary) {
         this.sid = sid;
         this.name = name;
         this.salary = salary;
         this.suid = "NULL";
+        staffNumber ++;
         allStaff.add(this);
     }
     public String getSid() {
         return this.sid;
     }
+    public static int getStaffNumber() {return staffNumber;}
     public void setSupervisor(String suid) {
         this.suid = suid;
     }

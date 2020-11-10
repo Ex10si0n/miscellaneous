@@ -1,4 +1,4 @@
-package comp212.courselab;
+package comp212.courselab.Inheritance;
 
 import java.util.ArrayList;
 import java.util.List;
