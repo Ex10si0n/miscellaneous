@@ -1,4 +1,4 @@
-package comp212.courselab.Exercises;
+package comp212.courselab.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Date;

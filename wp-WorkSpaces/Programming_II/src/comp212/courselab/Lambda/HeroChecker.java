@@ -1,2 +1,5 @@
-package comp212.courselab.Lambda;public class HeroChecker {
+package comp212.courselab.Lambda;
+
+public interface HeroChecker {
+    public boolean test(Hero h);
 }

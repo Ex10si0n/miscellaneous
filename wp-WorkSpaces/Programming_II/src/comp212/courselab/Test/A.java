@@ -1,2 +1,6 @@
-package comp212.courselab.Test;public class A {
+package comp212.courselab.Test;
+
+
+public class A extends B {
+
 }
