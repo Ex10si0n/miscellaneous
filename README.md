@@ -69,7 +69,7 @@ Editors I usually use are the followings:
   * beautifulsoup4, requests
   * Machine Learning
     * SVM, Decision Tree, Random Forest, K-means
-    * Tensorflow.keras
+    * Tensorflow Keras
 * Computer Architecture
   * Simple 8-bit CPU Design
 * Server
@@ -79,7 +79,7 @@ Editors I usually use are the followings:
 ## Learning Progress Notes
 
   * Repository created
-  * vim   - SpaceVim
+  * vim
   * git
   * Java/Python Object Oriented Programming
   * Databases: mySQL/oracle
