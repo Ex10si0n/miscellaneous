@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+		<meta charset="UTF-8">
+		<title>Template File</title>
+		<style>
+			body {
+				font-size: 2em;
+				background-color: #2e317c;
+				color: #fbb612;
+				font-family: "Inconsolata";
+				text-align: center;
+			}
+			h1 {
+				color: #ee8055;
+			}
+			h2 {
+				color: #f86b1d;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is a Template html File</h1>
+		<h2> Variables </h2>
+		<p>
+			Template Variables - content: {{ content }}
+		</p>
+		<p>
+			Template Variables - date: {{ date }}
+		</p>
+		<p>
+			Template Variables - list: {{ list }}
+		</p>
+		<h2> Keywords </h2>
+		<p>
+			for loop:
+		</p>
+		{% for i in list %}
+			<li> {{ i }} </li>
+			{% endfor %}
+	</body>
+</html>

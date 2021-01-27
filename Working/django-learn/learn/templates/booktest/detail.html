@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				font-size: 2em;
+				background-color: #fbecde;
+				color: #fbb612;
+				font-family: "Inconsolata";
+				text-align: center;
+			}
+			h1 {
+				color: #ee8055;
+			}
+			h2 {
+				color: #f86b1d;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>{{ book.bTitle }}</h1>
+		<h2> Characters: </h2>
+		{% for hero in heros %}
+			<li> {{ hero.hName }} -- {{ hero.hComment }} </li>
+		{% empty %}
+			<li> No Characters Info </li>
+		{% endfor %}
+	</body>
+</html>
