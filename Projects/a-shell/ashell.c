@@ -35,8 +35,7 @@ void prompt() {
         char *cwd = getcwd(dirbuffer, sizeof(dirbuffer));
         char *args[128];
 
-        printf("⎧ [A-Shell] 📎 [%s]", cwd);
-        char* command = readline("\n⎩ 🥑 says: ");
+        char* command = readline("GGN says: ");
         args[0] = command;
         add_history(command);
 

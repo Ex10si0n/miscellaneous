@@ -95,9 +95,9 @@ Editors I usually use are the followings:
   * Threading, Mutual Exclusive, Peterson Algorithms
   * Machine Learning: Neural Networks, CNN, RNN (Intro)
   * Machine Learning: CNN, RNN, NN (Implement)
+  * Docker
+  * Django
 
 ## Plan to
 
-  * Docker
-  * Vue.js
-  * PHP
+  * BootStrap
