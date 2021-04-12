@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex10si0n Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <style>
+        h4 {
+            display: inline;
+            padding: 10px;
+            color: #ff3c5e;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}"><h1>Ex10si0n Blog</h1></a>
+    <a href="{% url 'about' %}"><h4>About</h4></a>
+    <a href="https://github.com/Ex10si0n"><h4>GitHub</h4></a>
+    <a href="https://aspires.cc"><h4>Aspire</h4></a>
+    <hr>
+    {% block content%}
+    {% endblock content%}
+</body>
+</html>
