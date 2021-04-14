@@ -8,8 +8,8 @@ import random
 '''
 Pereference Settings
 '''
-display_answer = False
-display_maze = True
+display_answer = True
+display_maze = False
 usr_input_scale = False
 display_trace = True
 scale_x = 20
