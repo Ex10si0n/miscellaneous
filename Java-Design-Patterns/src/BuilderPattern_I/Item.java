@@ -1,0 +1,9 @@
+package BuilderPattern_I;
+
+public interface Item {
+    public String name();
+
+    public Packing packing();
+
+    public float price();
+}
