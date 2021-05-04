@@ -57,5 +57,3 @@ This Repository is for collecting codes in my learning coding.
   * Django
   * BootStrap
 
-## Plan to
-
