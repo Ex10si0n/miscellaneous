@@ -9,19 +9,20 @@
 <body>
     <div id="header">
         <span class="logo">Articles</span>
-            {% if request.user.is_autheticated %}
-                <ul class="menu">\
-                    <li {% if setction == "dashboard" %} class="selected" {% endif %}>
-                        <a href="#">All Articles</a>
-                    </li>
-                    <li {% if setction == "myArticles" %} class="selected" {% endif %}>
-                        <a href="#">My Articles</a>
-                    </li>
-                    <li {% if setction == "newArticles" %} class="selected" {% endif %}>
-                        <a href="#">New Articles</a>
-                    </li>
-                </ul>
-            {% endif %}
+            <ul class="menu">
+                <li {% if setction == "dashboard" %} class="selected" {% endif %}>
+                    <a href="#">All Articles</a>
+                </li>
+                <li {% if setction == "myArticles" %} class="selected" {% endif %}>
+                    <a href="#">My Articles</a>
+                </li>
+                <li {% if setction == "newArticles" %} class="selected" {% endif %}>
+                    <a href="#">New Articles</a>
+                </li>
+                <li>
+                    <a href="{% url 'create_post' %}">New Articles</a>
+                </li>
+            </ul>
         <span class="user">
             {% if request.user.is_authenticated %}
                 Hi {{ user.username }},
