@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>chap 3 example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
+  <style>
+    .try { background-color:lightgreen ; color: white; padding: 0px 10px 1px 1px; border-radius: 0px 0px 7px 0px;}
+  </style>
+</head>
+<body>
+
+
+<h1>Example p301</h1>
+<p>This first example of Vue shows that the mustache notation <code>{{ property }}</code> runs JavaScript expressions. When we mount a Vue application on the DOM element <code>#template</code>, Vue takes the content of the element as a <em>template</em> and replace those <code>{{ property }}</code> with values.</p>
+
+<hr>
+
+<div id="app">
+  <div>1+2*3 = {{ 1+2*3 }}</div>
+  <div>It's now {{ (new Date).toLocaleTimeString() }}</div>
+</div>
+
+<hr/>
+
+<p><span class='try'> Try the following</span></p> 
+<ul>
+<li>check that the JavaScript expressions in the placeholders <em>in this example</em> runs once and only once when this web page is loaded.</li>
+<li>Note: the next example will show reactivity: Vue will re-render the template when some data changes.</li>
+</ul>
+
+<!-- loading the Vue v3.2 JavaScript library from CDN -->    
+<script src="https://unpkg.com/vue@3.2"></script>
+
+<script>
+// define an empty Vue options object
+const options = { };
+
+// create a Vue component, mounted to the HTML template
+const vm = Vue.createApp(options).mount('#app');
+</script>
+
+</body>
+</html>
