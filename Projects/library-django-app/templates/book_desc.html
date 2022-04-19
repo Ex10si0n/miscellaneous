@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block MainContainer %}
+
+        <div class="table-responsive">
+            <h3>{{ book.title }}</h3>
+            <h5>Author: {{ book.author }}</h5>
+            <p>ISBN: {{ book.ISBN }}</p>
+            <p>{{ book.summary }}</p>
+        </div>
+{% endblock %}

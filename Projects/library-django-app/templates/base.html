@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta
+            name="author"
+            content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.80.0"/>
+    <title>Library</title>
+
+    <link
+            rel="canonical"
+            href="https://getbootstrap.com/docs/5.0/examples/dashboard/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+    />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        body {
+            font-size: 0.875rem;
+        }
+
+        .feather {
+            width: 16px;
+            height: 16px;
+            vertical-align: text-bottom;
+        }
+
+        /*
+         * Sidebar
+         */
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            /* rtl:raw:
+            right: 0;
+            */
+            bottom: 0;
+            /* rtl:remove */
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            padding: 48px 0 0; /* Height of navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 5rem;
+            }
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: 0.5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .sidebar .nav-link .feather {
+            margin-right: 4px;
+            color: #727272;
+        }
+
+        .sidebar .nav-link.active {
+            color: #007bff;
+        }
+
+        .sidebar .nav-link:hover .feather,
+        .sidebar .nav-link.active .feather {
+            color: inherit;
+        }
+
+        .sidebar-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        /*
+         * Navbar
+         */
+
+        .navbar-brand {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.25);
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .navbar .navbar-toggler {
+            top: 0.25rem;
+            right: 1rem;
+        }
+
+        .navbar .form-control {
+            padding: 0.75rem 1rem;
+            border-width: 0;
+            border-radius: 0;
+        }
+
+        .form-control-dark {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control-dark:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+        }
+    </style>
+
+</head>
+<body>
+<header
+        class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
+    >Ex10si0n Library</a
+    >
+    <button
+            class="navbar-toggler position-absolute d-md-none collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <form style="margin: 0; padding: 0" action="/search/" method="get" class="form-control form-control-dark w-100">
+        <input
+                class="form-control form-control-dark w-100"
+                type="text"
+                name="q"
+                placeholder="Search All Books"
+                aria-label="Search"
+        />
+    </form>
+    {% if request.user.is_authenticated %}
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <span style="color: white">Hello {{ user.username }}!</span>
+                <a style="display: inline" class="nav-link" href="{% url 'logout' %}">Sign out</a>
+            </li>
+        </ul>
+    {% else %}
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+        </ul>
+    {% endif %}
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <nav
+                id="sidebarMenu"
+                class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a
+                                {% if section == "home" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                aria-current="page"
+                                href="{% url 'home' %}"
+                        >
+                            <svg t="1619513219712" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4954" width="16" height="16"><path d="M913.706667 512.128c23.552 26.197333 23.893333 60.288 4.48 79.530667-21.034667 20.864-53.973333 18.602667-71.466667 1.834666-17.493333-16.725333-265.301333-279.552-288.128-302.549333-36.053333-36.266667-70.741333-34.133333-104.661333 0-34.133333 34.389333-271.530667 282.88-288.768 297.898667-17.237333 15.104-49.792 18.346667-70.144-1.962667-22.869333-22.869333-19.754667-60.202667-2.048-78.933333 21.461333-22.698667 325.546667-338.133333 343.296-357.376 43.008-46.634667 98.688-45.653333 133.546666-8.192 25.984 27.904 317.013333 339.797333 343.893334 369.749333zM453.418667 375.765333c28.458667-29.696 73.130667-33.664 105.088-0.128 13.781333 14.506667 264.917333 273.706667 264.917333 273.706667v180.138667c-0.085333 27.349333-20.565333 52.992-52.053333 53.376h-160.853334V736.853333c0-20.096-7.125333-31.658667-26.026666-31.488-13.994667 0.128-139.52-0.554667-162.517334-0.384-19.413333 0.128-25.344 15.104-25.429333 31.829334 0 13.397333-0.469333 146.048-0.469333 146.048H239.701333c-32.469333 0.170667-52.992-16.554667-53.205333-47.488-0.085333-15.573333-0.128-187.690667-0.128-187.690667s248.32-252.373333 267.050667-271.914667z" p-id="4955" fill="#1296db"></path></svg>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                                {% if section == "book" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                aria-current="page"
+                                href="{% url 'book' %}"
+                        >
+                        <svg t="1619513124604" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2261" width="16" height="16"><path d="M973.142857 273.142857q22.857143 32.571429 10.285714 73.714286l-157.142857 517.714286q-10.857143 36.571429-43.714286 61.428571t-70 24.857143l-527.428571 0q-44 0-84.857143-30.571429t-56.857143-75.142857q-13.714286-38.285714-1.142857-72.571429 0-2.285714 1.714286-15.428571t2.285714-21.142857q0.571429-4.571429-1.714286-12.285714t-1.714286-11.142857q1.142857-6.285714 4.571429-12t9.428571-13.428571 9.428571-13.428571q13.142857-21.714286 25.714286-52.285714t17.142857-52.285714q1.714286-5.714286 2.857143-17.142857t2.857143-16q1.714286-6.285714 9.714286-16t9.714286-13.142857q12-20.571429 24-52.571429t14.285714-51.428571q0.571429-5.142857-1.428571-18.285714t2.857143-16q2.285714-7.428571 12.571429-17.428571t12.571429-12.857143q10.857143-14.857143 24.285714-48.285714t15.714286-55.142857q0.571429-4.571429-1.714286-14.571429t-1.142857-15.142857q1.142857-4.571429 5.142857-10.285714t10.285714-13.142857 9.714286-12q4.571429-6.857143 9.428571-17.428571t8.571429-20 9.142857-20.571429 11.142857-18.285714 15.142857-13.428571 20.571429-6.571429 27.142857 3.142857l-0.571429 1.714286q21.714286-5.142857 29.142857-5.142857l434.857143 0q42.285714 0 65.142857 32t10.285714 74.285714l-156.571429 517.714286q-20.571429 68-40.857143 87.714286t-73.428571 19.714286l-496.571429 0q-15.428571 0-21.714286 8.571429-6.285714 9.142857-0.571429 24.571429 13.714286 40 82.285714 40l527.428571 0q16.571429 0 32-8.857143t20-23.714286l171.428571-564q4-12.571429 2.857143-32.571429 21.714286 8.571429 33.714286 24.571429zm-608 1.142857q-2.285714 7.428571 1.142857 12.857143t11.428571 5.428571l347.428571 0q7.428571 0 14.571429-5.428571t9.428571-12.857143l12-36.571429q2.285714-7.428571-1.142857-12.857143t-11.428571-5.428571l-347.428571 0q-7.428571 0-14.571429 5.428571t-9.428571 12.857143zm-47.428571 146.285714q-2.285714 7.428571 1.142857 12.857143t11.428571 5.428571l347.428571 0q7.428571 0 14.571429-5.428571t9.428571-12.857143l12-36.571429q2.285714-7.428571-1.142857-12.857143t-11.428571-5.428571l-347.428571 0q-7.428571 0-14.571429 5.428571t-9.428571 12.857143z" p-id="2262" fill="#707070"></path></svg>
+                            All Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                                {% if section == "author" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                href="{% url 'author' %}"
+                        >
+                        <svg t="1619513169359" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3396" width="16" height="16"><path d="M629.504 426.666667c41.216 0 74.666667 33.450667 74.666667 74.666666v202.624a192.042667 192.042667 0 0 1-384.085334 0V501.333333c0-41.216 33.408-74.666667 74.666667-74.666666h234.752z m-325.248 0c-14.933333 18.005333-24.533333 40.533333-26.453333 65.28l-0.426667 9.386666v202.624c0 36.138667 8.192 70.357333 22.784 100.906667A170.709333 170.709333 0 0 1 85.333333 639.957333V501.333333a74.666667 74.666667 0 0 1 68.522667-74.410666L160 426.666667h144.256z m415.744 0h144c41.216 0 74.666667 33.450667 74.666667 74.666666V640a170.666667 170.666667 0 0 1-214.613334 164.949333c12.8-26.794667 20.650667-56.32 22.4-87.552l0.384-13.44V501.333333c0-28.373333-10.069333-54.4-26.88-74.666666zM512 128a128 128 0 1 1 0 256 128 128 0 0 1 0-256z m277.333333 42.666667a106.666667 106.666667 0 1 1 0 213.333333 106.666667 106.666667 0 0 1 0-213.333333z m-554.666666 0a106.666667 106.666667 0 1 1 0 213.333333 106.666667 106.666667 0 0 1 0-213.333333z" p-id="3397" fill="#707070"></path></svg>
+                            All Authors
+                        </a>
+                    </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "my_books" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'my_books' %}"
+                        >
+                        <svg t="1619513330411" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11164" width="16" height="16"><path d="M512 266.24m-204.8 0a204.8 204.8 0 1 0 409.6 0 204.8 204.8 0 1 0-409.6 0Z" fill="#707070" p-id="11165"></path><path d="M409.6 532.48h204.8c180.98176 0 327.68 146.69824 327.68 327.68v20.48a81.92 81.92 0 0 1-81.92 81.92H163.84a81.92 81.92 0 0 1-81.92-81.92v-20.48c0-180.98176 146.69824-327.68 327.68-327.68z" fill="#707070" p-id="11166"></path></svg>
+                            My Books
+                        </a>
+                    </li>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <hr>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "all_borrowed_books" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'all_borrowed_books' %}"
+                        >
+                        <svg t="1619513421453" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="16263" width="16" height="16"><path d="M261.888 924.722H142.025c-24.262 0-44-19.738-44-44V140.325c0-24.262 19.738-44 44-44h119.863c24.262 0 44 19.738 44 44v740.397c0 24.261-19.739 44-44 44z m-99.863-64h79.863V160.325h-79.863v700.397zM511.888 928.722H392.025c-24.262 0-44-19.738-44-44V144.325c0-24.262 19.738-44 44-44h119.863c24.262 0 44 19.738 44 44v740.397c0 24.261-19.739 44-44 44z m-99.863-64h79.863V164.325h-79.863v700.397zM763.357 931.53c-21.028 0-39.678-15.164-43.346-36.576l-124.99-729.77c-4.096-23.913 12.026-46.7 35.94-50.796l118.143-20.235c11.574-1.982 23.231 0.668 32.834 7.462 9.602 6.794 15.98 16.908 17.963 28.479l124.991 729.771c1.981 11.57-0.668 23.23-7.461 32.832-6.794 9.603-16.908 15.982-28.479 17.965l-5.402-31.541 5.402 31.541-118.143 20.234a44.295 44.295 0 0 1-7.452 0.634zM661.479 174.092l118.238 690.344 78.717-13.481L740.195 160.61l-78.716 13.482z" fill="#707070" p-id="16264"></path><path d="M143.063 241.042H249v64H143.063zM400.999 239.802H503v64H400.999zM739.41 742.534l108.002-19.196 11.2 63.015-108.001 19.196z" fill="#707070" p-id="16265"></path></svg>
+                            Borrowed Books
+                        </a>
+                    </li>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "copies_list" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'copies_list' %}"
+                        >
+                        <svg t="1619513458328" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17186" width="16" height="16"><path d="M148.48 186.368q18.432-22.528 36.864-41.984 14.336-17.408 30.208-32.768t24.064-22.528q11.264-9.216 24.064-16.384t34.304-7.168l442.368 0q13.312 0 30.72 5.632t33.792 23.04q8.192 10.24 21.504 25.6t25.6 29.696q14.336 17.408 28.672 36.864l-732.16 0zM979.968 492.544q0 32.768-21.504 55.296t-61.44 22.528l-756.736 0q-38.912 0-61.952-22.528t-23.04-55.296l0-146.432q0-32.768 20.48-56.32t66.56-23.552l753.664 0q47.104 0 65.536 23.552t18.432 56.32l0 146.432zM593.92 418.816q0-13.312-6.656-18.944t-17.92-5.632l-103.424 0q-11.264 0-18.432 7.168t-7.168 17.408q1.024 13.312 7.68 19.456t17.92 6.144l103.424 0q23.552 0 24.576-25.6zM976.896 863.232q0 32.768-25.088 56.32t-64 22.528l-750.592 0q-32.768 0-58.88-23.04t-26.112-64l0-137.216q0-33.792 20.992-56.832t67.072-23.04l751.616 0q43.008 0 64 23.04t20.992 55.808l0 146.432zM590.848 790.528q0-10.24-6.656-17.408t-17.92-7.168l-103.424 0q-11.264 0-18.432 7.168t-7.168 17.408 7.168 17.408 18.432 7.168l103.424 0q11.264 0 17.92-7.168t6.656-17.408z" p-id="17187" fill="#707070"></path></svg>
+                            * Copies Manage
+                        </a>
+                    </li>
+                {% endif %}
+                    {% if perms.library.add_book %}
+                        <hr>
+                    {% endif %}
+                {% if perms.library.add_book %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "new_copy" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'new_copy' %}"
+                        >
+                        <svg t="1619513488261" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18038" width="16" height="16"><path d="M640 288 640 64 192 64C121.344 64 64 121.344 64 192l0 704c0 70.656 57.344 128 128 128l576 0c70.656 0 128-57.344 128-128L896 320l-224 0C654.336 320 640 305.664 640 288zM704 544C704 561.664 689.664 576 672 576L512 576l0 160C512 753.664 497.664 768 480 768S448 753.664 448 736L448 576 288 576C270.336 576 256 561.664 256 544S270.336 512 288 512L448 512 448 352C448 334.336 462.336 320 480 320S512 334.336 512 352L512 512l160 0C689.664 512 704 526.336 704 544zM704 64l0 192 192 0L704 64z" p-id="18039" fill="#707070"></path></svg>
+                            + New Book Copy
+                        </a>
+                    </li>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "new_author" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'new_author' %}"
+                        >
+                        <svg t="1619513524856" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="20360" width="16" height="16"><path d="M46.241324 1005.860317a44.605779 44.605779 0 0 1-44.605779-44.605779 511.925657 511.925657 0 0 1 511.330914-511.330914 44.605779 44.605779 0 1 1 0 89.211558A422.416727 422.416727 0 0 0 90.847103 961.254538a44.605779 44.605779 0 0 1-44.605779 44.605779z" fill="#707070" p-id="20361"></path><path d="M512.966459 539.135182a269.567591 269.567591 0 1 1 269.567591-269.567591 269.864963 269.864963 0 0 1-269.567591 269.567591z m0-449.923624a180.356033 180.356033 0 1 0 180.356033 180.356033A180.504719 180.504719 0 0 0 512.966459 89.211558z" fill="#707070" p-id="20362"></path><path d="M596.081893 761.271962m44.605779 0l337.071004 0q44.605779 0 44.605779 44.605779l0 0q0 44.605779-44.605779 44.605779l-337.071004 0q-44.605779 0-44.605779-44.605779l0 0q0-44.605779 44.605779-44.605779Z" fill="#707070" p-id="20363"></path><path d="M853.75461 587.606795m0 44.605779l0 347.181647q0 44.605779-44.605779 44.605779l0 0q-44.605779 0-44.605779-44.605779l0-347.181647q0-44.605779 44.605779-44.605779l0 0q44.605779 0 44.605779 44.605779Z" fill="#707070" p-id="20364"></path></svg>
+                            + New Author
+                        </a>
+                    </li>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "new_book" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'new_book' %}"
+                        >
+                        <svg t="1619513568427" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21981" width="16" height="16"><path d="M733.397 928.471l114.925-145.925H733.397v145.925z m6 0" p-id="21982" fill="#707070"></path><path d="M781.211 98.623H468.268v370.342l-106.461-106.21-106.461 106.21V98.623h-59.109c-37.245 0-67.46 30.154-67.539 67.399v695.05c0.078 37.245 30.294 67.399 67.539 67.399h472.216V738.065a22.455 22.455 0 0 1 6.581-15.882 22.458 22.458 0 0 1 15.882-6.581h157.406v-549.58c-0.079-37.079-30.031-67.163-67.111-67.399z" p-id="21983" fill="#707070"></path></svg>
+                            + New Book
+                        </a>
+                    </li>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <hr>
+                {% endif %}
+                {% if perms.library.add_book %}
+                    <li class="nav-item">
+                        <a
+                                {% if section == "new_message" %}
+                                    class="nav-link active"
+                                {% else %}
+                                    class="nav-link"
+                                {% endif %}
+                                    href="{% url 'new_message' %}"
+                        >
+                        <svg t="1619513588998" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="22393" width="16" height="16"><path d="M704.192 576 576 576 576 704.192C576 739.424 547.584 768 512 768 476.64 768 448 739.36 448 704.192L448 576 319.808 576C284.576 576 256 547.584 256 512 256 476.64 284.64 448 319.808 448L448 448 448 319.808C448 284.576 476.416 256 512 256 547.36 256 576 284.64 576 319.808L576 448 704.192 448C739.424 448 768 476.416 768 512 768 547.36 739.36 576 704.192 576M512 64C264.576 64 64 264.576 64 512 64 595.36 87.168 673.152 126.848 740L74.048 924.768C69.664 940.128 83.872 954.304 99.232 949.952L284 897.152C350.848 936.832 428.64 960 512 960 759.424 960 960 759.424 960 512 960 264.576 759.424 64 512 64" p-id="22394" fill="#707070"></path></svg>
+                            + New Message
+                        </a>
+                    </li>
+                {% endif %}
+                </ul>
+                <div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+            >
+                <h1 class="h2">Ex10si0n 图书馆</h1>
+            </div>
+
+        {% block MainContainer %}
+
+        {% endblock %}
+        </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>

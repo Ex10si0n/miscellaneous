@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block MainContainer %}
+
+        <div class="table-responsive">
+            <h2>Manage {{ bookcopies.book.title }}</h2>
+            <p>UUID: {{ bookcopies.id }}</p>
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <button class="w-10 btn btn-danger" type="submit">Update</button>
+            </form>
+        </div>
+{% endblock %}

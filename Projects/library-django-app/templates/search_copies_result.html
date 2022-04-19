@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block MainContainer %}
+
+    <h3>You searched for: <strong>{{ query }}</strong></h3>
+    <form action="/search_copies/" method="get" class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+        <div class="table-responsive">
+        {% if books %}
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th>UUID</th>
+                    <th>Book</th>
+                    <th>ISBN</th>
+                    <th>Borrower</th>
+                    <th>Status</th>
+                    <th>Due</th>
+                    <th>Modify</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td><a href="{% url 'book_desc' book.book.pk %}">{{ book.book.title }}</a></td>
+                        <td>{{ book.book.ISBN }}</td>
+                        <td>{{ book.borrower }}</td>
+                        {% if book.status == 'm' %}
+                            <td style="color: lightblue">Maintenance</td>
+                        {% endif %}
+                        {% if book.status == 'o' %}
+                            <td style="color: red">On Loan</td>
+                        {% endif %}
+                        {% if book.status == 'a' %}
+                            <td style="color:green">Available</td>
+                        {% endif %}
+                        {% if book.status == 'r' %}
+                            <td style="orange">Reserved</td>
+                        {% endif %}
+                        <td>{{ book.due_back }}</td>
+                        <td><a href="{% url 'copies_manage' book.pk %}">Manage</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No books matched your search criteria.</p>
+        {% endif %}
+        </div>
+{% endblock %}

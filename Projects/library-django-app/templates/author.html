@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block MainContainer %}
+
+        <h2>Author Detailed Informantion</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>date of birth</th>
+                    <th>date of death</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ author.first_name }} </td>
+                    <td>{{ author.last_name }} </td>
+                    <td>{{ author.date_of_birth }} </td>
+                    <td>{{ author.date_of_death }} </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

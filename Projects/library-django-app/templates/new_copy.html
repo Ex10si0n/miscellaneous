@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block MainContainer %}
+
+        <div class="table-responsive">
+            <h2>New Copy</h2>
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <button class="w-10 btn btn-primary" type="submit">Add Copy</button>
+            </form>
+        </div>
+{% endblock %}
