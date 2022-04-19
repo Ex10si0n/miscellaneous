@@ -4,7 +4,7 @@
 
 this repository is for collecting codes in my learning coding.
 
-## Technique Stack
+## Technique Stack (Legacy, waiting for updation)
 
 * Programming Language Basic
   * C, C++, Python, Java, C\#, JavaScript
